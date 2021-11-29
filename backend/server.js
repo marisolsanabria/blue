@@ -38,7 +38,7 @@ const onError = (error) =>{
 const onListening = () =>{
     const addr= server.address();
     const bind= typeof PORT === "string" ? "pipe" + PORT : "port" + PORT;
-    console.log(`Backend app listening at http://localhost:${PORT}`)
+    console.log(`Backend app listening at ${addr.address}:${PORT}`);
 };
 
 const PORT = normalizePort(process.env.PORT || "3000");
@@ -46,7 +46,7 @@ app.set('port', PORT);
 
 const server = http.createServer(app);
 server.on('error', onError);
-server.on('error', onListening);
+server.on('listening', onListening);
 server.listen(PORT);
 
 
