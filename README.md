@@ -142,5 +142,15 @@ Innovar, liderar y proveer un servicio integral proporcionando una plataforma pa
 
 ## Sprint 2
 
+Entregables
 
+-Contenido del Sprint #2.
+
+Nota: Los entregables para el Sprint 2, fueron organizados en una carpeta de drive compartida. Allí se adjuntarón:
+
+-Las capturas de las instalaciones.
+
+-Diagramas UML (Clases y Casos de Uso).
+
+-Avance del wireframe del aplicativo.
 
