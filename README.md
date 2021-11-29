@@ -144,7 +144,7 @@ Innovar, liderar y proveer un servicio integral proporcionando una plataforma pa
 
 Entregables
 
--Contenido del Sprint #2.
+-Contenido del Sprint #2[https://drive.google.com/drive/folders/1PhSjUlh6iH8tV1dkR4m1HxbKItZHvfzc?usp=sharing].
 
 Nota: Los entregables para el Sprint 2, fueron organizados en una carpeta de drive compartida. Allí se adjuntarón:
 
