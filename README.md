@@ -154,3 +154,17 @@ Nota: Los entregables para el Sprint 2, fueron organizados en una carpeta de dri
 
 -Avance del wireframe del aplicativo.
 
+## Sprint 3
+
+Entregables
+
+-Contenido del Sprint #3[https://drive.google.com/drive/folders/1rqseFlQoLFXGJoDbbfAlw6d50utjiDe7].
+
+Nota: Los entregables para el Sprint 3, fueron organizados en una carpeta de drive compartida. Allí se adjuntarón:
+
+-XXX.
+
+-XXX.
+
+-XXX.
+
