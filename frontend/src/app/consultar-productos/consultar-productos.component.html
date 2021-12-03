@@ -1,0 +1,16 @@
+<p *ngIf="productos.length === 0">No se han agregado productos</p>
+
+<table *ngFor="let producto of productos">
+  <tr>
+    <th>Nombre</th>
+    <th>Categoria</th>
+    <th>Cantidad</th>
+    <th>Precio</th>
+  </tr>
+  <tr>
+    <td>{{producto.nombre}}</td>
+    <td>{{producto.categoria}}</td>
+    <td>{{producto.cantidad}}</td>
+    <td>{{producto.precio}}</td>
+  </tr>
+</table>
