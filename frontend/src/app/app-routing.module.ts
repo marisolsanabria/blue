@@ -5,7 +5,8 @@ import { ConsultarProductosComponent } from './consultar-productos/consultar-pro
 
 const routes: Routes = [
   {path:'',component:ConsultarProductosComponent},
-  {path: 'agregar',component:AgregarProductosComponent}
+  {path: 'agregar',component:AgregarProductosComponent},
+  {path:'editar/:productoId',component: AgregarProductosComponent}
 ];
 
 @NgModule({

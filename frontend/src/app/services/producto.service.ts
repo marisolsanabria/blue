@@ -25,6 +25,8 @@ export class ProductoService {
       .subscribe((response) => {
         console.log(response);
         this.productos.push(producto);
+        //Agregar modal que indique un mensaje "Producto eliminado con éxito" ---Utilizando SweetAlert2
+
         // Generar notificacion de actualizacion a los componentes suscritos al Subject
         this.productoUpdated.next([...this.productos]);
         this.router.navigate(['/']);
@@ -35,17 +37,17 @@ export class ProductoService {
     this.http
       .get<any>(this.url)
       .pipe(
-        map((postsData) => {
-          return postsData.map(
+        map((productsData) => {
+          return productsData.map(
             (producto: {
-
+              _id: string;
               nombre:string;
               categoria:string;
               cantidad:number;
               precio:number;
             }) => {
               return {
-
+                id: producto._id,
                 nombre:producto.nombre,
                 categoria:producto.categoria,
                 cantidad:producto.cantidad,
@@ -68,11 +70,12 @@ export class ProductoService {
       const productosFiltered = this.productos.filter((producto) => producto.id != id);
       this.productos = productosFiltered;
       this.productoUpdated.next([...this.productos]);
+      //Agregar modal que indique un mensaje "Producto eliminado con éxito" ---Utilizando SweetAlert2
     });
   }
 
   updateProducto(producto:Producto, id: string) {
-    this.http.put(`${this.url}/${id}`, producto).subscribe((response) => {
+      this.http.put(`${this.url}/${id}`, producto).subscribe((response) => {
       const newProductos = [...this.productos];
       const oldProductIndex = newProductos.findIndex((producto) => producto.id === id);
       newProductos[oldProductIndex] = producto;
@@ -83,6 +86,7 @@ export class ProductoService {
 
   getProducto(id: string) {
     return this.http.get<{
+     _id:string;
      nombre:string;
      categoria:string;
      cantidad:number;

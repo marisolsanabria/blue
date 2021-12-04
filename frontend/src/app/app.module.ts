@@ -3,11 +3,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http";
 
 //Componentes del aplicativo
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClientModule} from "@angular/common/http";
 import { AgregarProductosComponent } from './agregar-productos/agregar-productos.component';
 
 //Componentes de material
@@ -19,6 +19,7 @@ import {MatTableModule} from '@angular/material/table';
 import { ConsultarProductosComponent } from './consultar-productos/consultar-productos.component';
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatFormFieldModule,
     MatSelectModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

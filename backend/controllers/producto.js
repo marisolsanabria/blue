@@ -24,7 +24,7 @@ const Producto = require('../models/producto')
 }
 */
 
-exports.getProducto = (req, res) => {
+exports.getProductos = (req, res) => {
     Producto.find().then((productoResult) => {
       res.status(200).json(productoResult);
     });
@@ -72,6 +72,15 @@ exports.deleteProducto = (req, res) => {
       }
     });
   };
+
+exports.getProducto = (req, res) => {
+  const id = req.params.id;
+
+  Producto.findById(id).then((result) =>{
+  console.log(result);
+  res.status(200).json(result);
+  })
+}
 
 
 

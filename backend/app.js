@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = new require("cors");
 const app=express();
 const mongoose=require("mongoose");
 
@@ -8,6 +9,7 @@ const productoRoutes= require("./routes/producto");
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(cors());
 
 // Configuración de la conexión a la bd
 mongoose.connect(

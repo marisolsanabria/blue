@@ -12,7 +12,6 @@ export class ConsultarProductosComponent implements OnInit, OnDestroy {
 
   productos: Producto[] = [];
   productoSub: Subscription;
-  errorMessage = "Este campo es requerido";
 
   constructor(public productosService: ProductoService) {
     this.productoSub = this.productosService.getProductosUpdateListener().subscribe((productos: Producto[]) => {
@@ -21,6 +20,7 @@ export class ConsultarProductosComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit(): void {
+    this.productosService.getProductos();
     this.productoSub = this.productosService.getProductosUpdateListener().subscribe((productos: Producto[]) => {
       this.productos = productos;
     });
@@ -31,9 +31,8 @@ export class ConsultarProductosComponent implements OnInit, OnDestroy {
     this.productoSub.unsubscribe();
   }
 
-  //Función para campos requeridos
-  getErrorMessage(){
-    return this.errorMessage;
-  }
 
+  onDelete(id: string){
+    this.productosService.deleteProducto(id);
+  }
 }
