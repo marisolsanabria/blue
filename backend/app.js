@@ -4,6 +4,7 @@ const app=express();
 const mongoose=require("mongoose");
 
 const productoRoutes= require("./routes/producto");
+const userRoutes= require("./routes/user");
 
 //import de las routes 
 
@@ -21,7 +22,8 @@ mongoose.connect(
     });
 
 
-app.use("/api/productos",productoRoutes)
+app.use("/api/productos",productoRoutes);
+app.use("/api/user",userRoutes);
 
 module.exports = app;
 
