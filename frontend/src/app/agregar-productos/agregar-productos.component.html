@@ -1,35 +1,46 @@
-<!-- <p>{{content}}</p>
-<input [(ngModel)]="texto" matInput placeholder="nombre"> -->
-
-<form (submit)="guardarProducto(productForm)" #productForm="ngForm" >
-  <mat-form-field appearance="fill">
-    <mat-label>Nombre del producto</mat-label>
-    <input type="text" matInput placeholder="Nombre" [ngModel]="producto.nombre" nombre="ngModel" name="nombre" required>
-    <mat-error>{{getErrorMessage()}}</mat-error>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Categoria</mat-label>
-    <mat-select [ngModel]="producto.categoria" categoria="ngModel" name="categoria" required>
-      <mat-option value="aseo">Aseo</mat-option>
-      <mat-option value="viveres">Viveres</mat-option>
-    </mat-select>
-    <mat-error>{{getErrorMessage()}}</mat-error>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Cantidad de producto</mat-label>
-    <input type="number" matInput placeholder="Cantidad" [ngModel]="producto.cantidad" cantidad="ngModel" name="cantidad"  required>
-    <mat-error>{{getErrorMessage()}}</mat-error>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Precio del producto</mat-label>
-    <input type="number" matInput placeholder="Precio" [ngModel]="producto.precio" precio="ngModel" name="precio" required>
-    <mat-error>{{getErrorMessage()}}</mat-error>
-  </mat-form-field>
-
-  <button mat-raised-button color="primary">Guardar</button>
-</form>
-
-
+<hr>
+<div class="central">
+  <h1>Agregar producto</h1>
+  <form (submit)="guardarProducto(productForm)" #productForm="ngForm">
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Nombre del producto</mat-label>
+        <input type="text" matInput placeholder="Nombre" [ngModel]="producto.nombre" nombre="ngModel" name="nombre"
+          required>
+        <mat-error>{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Categoria</mat-label>
+        <mat-select [ngModel]="producto.categoria" categoria="ngModel" name="categoria" required>
+          <mat-option value="aseo">Aseo</mat-option>
+          <mat-option value="viveres">Viveres</mat-option>
+        </mat-select>
+        <mat-error>{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Cantidad de producto</mat-label>
+        <input type="number" matInput placeholder="Cantidad" [ngModel]="producto.cantidad" cantidad="ngModel"
+          name="cantidad" required>
+        <mat-error>{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Precio del producto</mat-label>
+        <input type="number" matInput placeholder="Precio" [ngModel]="producto.precio" precio="ngModel" name="precio"
+          required>
+        <mat-error>{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <button mat-raised-button color="primary">Guardar</button>
+  </form>
+</div>
+<hr>
+<div>
+  <h1>Consultar producto</h1>
+  <app-consultar-productos></app-consultar-productos>
+</div>

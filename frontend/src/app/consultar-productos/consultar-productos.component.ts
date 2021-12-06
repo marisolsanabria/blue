@@ -11,6 +11,9 @@ import{Subscription} from 'rxjs';
 export class ConsultarProductosComponent implements OnInit, OnDestroy {
 
   productos: Producto[] = [];
+  // productos1: Producto[] = [{id:"1", nombre:"Aguacate", categoria:"viveres", cantidad:4, precio:10000}];
+  // displayedColumns: string[] = ['id', 'nombre', 'categoria', 'cantidad','precio'];
+  dataSource = this.productos;
   productoSub: Subscription;
 
   constructor(public productosService: ProductoService) {
