@@ -43,8 +43,14 @@ exports.login= (req, res) => {
 
        const token = jwt.sign({email: userGet.email, userId:userGet.id}, "Blue_secret_for_logIn",{expiresIn: "1hr"});
        console.log({token});
-       res.status(200).json({ token:token });
+       res.status(200).json({ token:token, expiresIn: 3600,userId: userGet.id});
        }).catch((err)=>{
-           return res.status(401).jason({message:"Autenticación fallida"})
+           return res.status(401).jason({message:"Autenticación fallida"});
        });
+};
+
+exports.getUser = (req, res) => {
+    User.findById(req.params.userId).then((user) => {
+        res.status(200).json({username:user.username});
+    });
 };
