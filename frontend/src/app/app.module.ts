@@ -8,6 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 //Componentes del aplicativo
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ListProductComponent } from './components/list-product/list-product.component';
 import { AgregarProductosComponent } from './agregar-productos/agregar-productos.component';
 
 //Componentes de material
@@ -24,6 +25,7 @@ import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
+    ListProductComponent,
     AgregarProductosComponent,
     ConsultarProductosComponent,
     HeaderComponent

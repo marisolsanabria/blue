@@ -162,9 +162,9 @@ Entregables
 
 Nota: Los entregables para el Sprint 3, fueron organizados en una carpeta de drive compartida. Allí se adjuntarón:
 
--XXX.
+-Instalacion dependencias.
 
--XXX.
+-Pruebas Insomnia.
 
--XXX.
+-Las demás actividades se ven reflejadas en el backend del proyecto.
 
