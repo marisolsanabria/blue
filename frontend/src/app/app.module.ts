@@ -21,6 +21,7 @@ import { ConsultarProductosComponent } from './consultar-productos/consultar-pro
 import { HeaderComponent } from './header/header.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatIconModule} from '@angular/material/icon';
     ListProductComponent,
     AgregarProductosComponent,
     ConsultarProductosComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,24 @@
+<hr>
+<div class="central">
+  <h1>Iniciar Sesión</h1>
+  <form (submit)="iniciar(loginForm)" #loginForm="ngForm">
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Usuario: </mat-label>
+        <input type="text" matInput placeholder="Nombre" [ngModel]="datosLogin.usuario" usuario="ngModel" name="usuario"
+          required>
+        <mat-error>{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña: </mat-label>
+        <input type="password" matInput placeholder="Contraseña" [ngModel]="datosLogin.pass" pass="ngModel"
+          name="pass" required>
+        <mat-error>{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </p>
+    <button mat-raised-button color="primary">Iniciar</button>
+  </form>
+</div>
+<hr>
