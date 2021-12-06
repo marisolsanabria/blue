@@ -42,7 +42,9 @@ exports.login= (req, res) => {
        //calculamnos el token para verficar el que llega, para instalamos el npm i jsonwebtoken
 
        const token = jwt.sign({email: userGet.email, userId:userGet.id}, "Blue_secret_for_logIn",{expiresIn: "1hr"});
-    
-
-    });
+       console.log({token});
+       res.status(200).json({ token:token });
+       }).catch((err)=>{
+           return res.status(401).jason({message:"Autenticación fallida"})
+       });
 };
