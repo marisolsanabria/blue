@@ -5,14 +5,16 @@ import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Producto } from '../models/product.model';
+import { environment } from 'src/environments/environment';
 
+const url = environment.apiUrl + "/productos";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductoService {
 
-  url = 'http://localhost:3000/api/productos';
+
 
   productos: Producto[] = [];
   productoUpdated = new Subject<Producto[]>();
@@ -21,7 +23,7 @@ export class ProductoService {
 
   addProducto(producto:Producto) {
     this.http
-      .post<{ message: string }>(this.url, producto)
+      .post<{ message: string }>(url, producto)
       .subscribe((response) => {
         console.log(response);
         this.productos.push(producto);
@@ -35,7 +37,7 @@ export class ProductoService {
 
   getProductos() {
     this.http
-      .get<any>(this.url)
+      .get<any>(url)
       .pipe(
         map((productsData) => {
           return productsData.map(
@@ -65,7 +67,7 @@ export class ProductoService {
   }
 
   deleteProducto(id: string) {
-    this.http.delete(`${this.url}/${id}`).subscribe((response) => {
+    this.http.delete(`${url}/${id}`).subscribe((response) => {
       console.log(response);
       const productosFiltered = this.productos.filter((producto) => producto.id != id);
       this.productos = productosFiltered;
@@ -75,7 +77,7 @@ export class ProductoService {
   }
 
   updateProducto(producto:Producto, id: string) {
-      this.http.put(`${this.url}/${id}`, producto).subscribe((response) => {
+      this.http.put(`${url}/${id}`, producto).subscribe((response) => {
       const newProductos = [...this.productos];
       const oldProductIndex = newProductos.findIndex((producto) => producto.id === id);
       newProductos[oldProductIndex] = producto;
@@ -91,7 +93,7 @@ export class ProductoService {
      categoria:string;
      cantidad:number;
      precio:number;
-    }>(`${this.url}/${id}`);
+    }>(`${url}/${id}`);
   }
 
   getProductosUpdateListener() {

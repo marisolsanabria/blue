@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { Subject } from 'rxjs';
 
-import { User } from 'src/app/models/user.model';
+import { User } from '../models/usuario.model';
 
 import { environment } from 'src/environments/environment';
 
