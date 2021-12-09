@@ -1,0 +1,16 @@
+mat-form-flield,
+input {
+  width: 100%;
+}
+
+form {
+  margin-top: 1rem;
+}
+
+.central {
+  text-align: center;
+}
+
+.title {
+  margin: 1rem;
+}

@@ -1,0 +1,29 @@
+<p *ngIf="productos.length === 0">No se han agregado productos</p>
+
+<table *ngIf="productos.length > 0">
+  <h1>Consultar productos</h1>
+  <tr>
+    <th>Nombre</th>
+    <th>Categoria</th>
+    <th>Cantidad</th>
+    <th>Precio</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+  <tr *ngFor="let producto of productos">
+    <td>{{producto.nombre}}</td>
+    <td>{{producto.categoria}}</td>
+    <td>{{producto.cantidad}}</td>
+    <td>{{producto.precio}}</td>
+    <td>
+      <button mat-icon-button routerLink="/editar" color="primary" [routerLink]="['/editar',producto.id]">
+        <mat-icon>create</mat-icon>
+      </button>
+    </td>
+    <td>
+      <button mat-icon-button routerLink="/eliminar" color="warn" (click)="onDelete(producto.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </tr>
+</table>
